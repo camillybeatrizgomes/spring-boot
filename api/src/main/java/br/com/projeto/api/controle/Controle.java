@@ -2,6 +2,8 @@ package br.com.projeto.api.controle;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.projeto.api.modelo.Cliente;
 import br.com.projeto.api.modelo.Pessoa;
 import br.com.projeto.api.repositorio.Repositorio;
 import br.com.projeto.api.servico.Servico;
@@ -148,5 +151,10 @@ public class Controle {
     @GetMapping("/status")
     public ResponseEntity<?> status(){
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("/cliente")
+    public void Cliente(@Valid @RequestBody Cliente obj){
+        
     }
 }
